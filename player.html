@@ -5,22 +5,44 @@
   <title>Player - INFCONTENT</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
       background-color: black;
     }
-    video {
+    .video-wrapper {
+      position: relative;
       width: 100%;
-      height: 100vh;
+      height: 100%;
+    }
+    video {
+      position: absolute;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      display: block;
+    }
+    .overlay-link {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
     }
   </style>
 </head>
 <body>
-  <video autoplay muted playsinline onclick="window.location.href='redirect.html'">
-    <source src="video.mp4" type="video/mp4">
-    Browser kamu tidak mendukung video.
-  </video>
+  <div class="video-wrapper">
+    <video autoplay muted playsinline>
+      <source src="video.mp4" type="video/mp4">
+      Browser kamu tidak mendukung video.
+    </video>
+    <a class="overlay-link" href="redirect.html"></a>
+  </div>
 </body>
 </html>
+``

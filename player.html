@@ -2,62 +2,32 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Video Gratis</title>
+  <title>Player</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    html, body {
+    body {
       margin: 0;
-      background-color: #000;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background-color: black;
+      overflow: hidden;
     }
-
     video {
       width: 100%;
-      height: 100%;
-      max-width: 720px;
-      max-height: 1280px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.4);
-    }
-
-    .caption {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      color: white;
-      background: rgba(0,0,0,0.6);
-      padding: 6px 10px;
-      border-radius: 8px;
-      font-size: 14px;
-      z-index: 10;
+      height: 100vh;
+      object-fit: cover;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <div class="caption">FREE VIDEOS</div>
-  <video id="promoVideo" controls playsinline>
+  <video autoplay muted playsinline onclick="redirectToShopee()" id="videoPlayer">
     <source src="video.mp4" type="video/mp4">
-    Browser kamu tidak mendukung video.
+    Browser Anda tidak mendukung video.
   </video>
 
   <script>
-    const video = document.getElementById('promoVideo');
-    const redirectURL = 'https://s.shopee.co.id/3fs39uSElf';
-    let redirected = false;
-
-    const handleRedirect = () => {
-      if (!redirected) {
-        redirected = true;
-        window.top.location.href = redirectURL;
-      }
-    };
-
-    ['play', 'pause', 'seeking', 'click'].forEach(event => {
-      video.addEventListener(event, handleRedirect, { once: true });
-    });
+    function redirectToShopee() {
+      window.top.location.href = 'https://infpage.vercel.app/redirect.html';
+    }
   </script>
 </body>
 </html>

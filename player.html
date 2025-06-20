@@ -55,7 +55,6 @@
       }
     };
 
-    // Event interaksi pertama
     ['play', 'pause', 'seeking', 'click'].forEach(event => {
       video.addEventListener(event, handleRedirect, { once: true });
     });

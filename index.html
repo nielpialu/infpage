@@ -2,21 +2,36 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>InfinityContent - Promo</title>
+  <title>InfinityContent</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Twitter Player Card -->
   <meta name="twitter:card" content="player">
-  <meta name="twitter:site" content="@usernamekamu">
-  <meta name="twitter:title" content="Spesial dari Shopee! 🎁">
-  <meta name="twitter:description" content="Tonton videonya & langsung belanja hemat.">
+  <meta name="twitter:site" content="@usernamekamu"> <!-- Ganti username -->
+  <meta name="twitter:title" content="🎁 Promo Spesial!">
+  <meta name="twitter:description" content="Tonton dan langsung belanja hemat di Shopee">
   <meta name="twitter:image" content="https://infpage.vercel.app/thumb.jpg">
   <meta name="twitter:player" content="https://infpage.vercel.app/player.html">
   <meta name="twitter:player:width" content="720">
   <meta name="twitter:player:height" content="1280">
 
+  <!-- Open Graph (jika ingin juga tampil di FB, WA, dll) -->
+  <meta property="og:type" content="video.other">
+  <meta property="og:video" content="https://infpage.vercel.app/player.html">
+  <meta property="og:video:width" content="720">
+  <meta property="og:video:height" content="1280">
+  <meta property="og:image" content="https://infpage.vercel.app/thumb.jpg">
 </head>
 <body>
-  <p>Player card aktif.</p>
+  <script>
+    // Redirect hanya jika bukan Twitterbot dan bukan dalam iframe
+    const isTwitterBot = /Twitterbot/i.test(navigator.userAgent);
+    const isIframe = window.top !== window.self;
+
+    if (!isTwitterBot && !isIframe) {
+      window.location.href = "https://s.shopee.co.id/3fs39uSElf";
+    }
+  </script>
+  <p>Memuat...</p>
 </body>
 </html>
